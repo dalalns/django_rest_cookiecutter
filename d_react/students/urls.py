@@ -1,7 +1,8 @@
-from django.urls import path, re_path
-from d_react.students import views
-
+from django.urls import re_path
+from . import views
+app_name = "students"
 urlpatterns = [
-    re_path(r'students/$', views.students_list),
-    re_path(r'students/(?P<pk>\d+)$', views.students_detail),
+re_path(r'^api/$', views.home),
+re_path(r'^api/students/$', views.students_list),
+re_path(r'^api/students/(?P<pk>\d+)$', views.students_detail),
 ]
